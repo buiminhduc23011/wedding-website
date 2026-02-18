@@ -7,20 +7,27 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#4CAF50", // Sage Green from invitation
-        secondary: "#FFF9C4", // Cream/Yellowish Light background
-        accent: "#388E3C", // Darker green for text/buttons
-        neutral: "#FAFAFA",
+        primary: "#DA8C8C", // Wedding pink
+        success: "#16A34A",
+        error: "#DC2626",
+        standby: "#475569",
+        neutral: "#F8FAFC", // Page background
+        white: "#FFFFFF",   // Card background
         "text-main": "#333333",
+        "text-muted": "#64748B", // Medium gray for subheaders
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
         display: ['Playfair Display', 'serif'],
-        script: ['Dancing Script', 'cursive'],
+        script: ['Pinyon Script', 'cursive'],
+        cursive: ['Dancing Script', 'cursive'],
       },
       borderRadius: {
         DEFAULT: '16px',
-        'xl': '24px',
+        'pill': '9999px',
+      },
+      boxShadow: {
+        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
       }
     },
   },

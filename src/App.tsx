@@ -4,13 +4,17 @@ import { RsvpForm } from './components/features/RsvpForm';
 import { MusicPlayer } from './components/features/MusicPlayer';
 import { GallerySection } from './components/features/GallerySection';
 import { TimelineSection } from './components/features/TimelineSection';
+import { FloatingWishes } from './components/features/FloatingWishes';
+import { OpeningSection } from './components/features/OpeningSection';
 
 function App() {
   return (
-    <div className="min-h-screen bg-neutral font-sans selection:bg-primary/30">
+    <div className="min-h-screen bg-neutral font-sans selection:bg-primary/20 overflow-x-hidden max-w-[100vw]">
       <MusicPlayer />
+      <FloatingWishes />
 
       <main>
+        <OpeningSection id="opening-section" />
         <HeroSection />
         <TimelineSection />
 
@@ -21,11 +25,11 @@ function App() {
         <MapSection />
 
         <RsvpForm />
+
       </main>
 
-      <footer className="py-8 text-center text-text-main/60 text-sm bg-neutral">
-        <p className="font-display text-xl mb-2">Đức & Tuyên</p>
-        <p>© 2026 Wedding Website</p>
+      <footer className="py-12 text-center bg-white border-t border-slate-100">
+        <p className="font-display text-4xl text-primary italic">Thank you</p>
       </footer>
     </div>
   )

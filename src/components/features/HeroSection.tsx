@@ -1,4 +1,6 @@
 import React from 'react';
+import { Countdown } from './Countdown';
+import { ASSETS_VERSION } from '../../config';
 
 
 export const HeroSection: React.FC = () => {
@@ -6,33 +8,46 @@ export const HeroSection: React.FC = () => {
         <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
             {/* Background Image with Overlay */}
             <div
-                className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
-                style={{ backgroundImage: "url('/Images/1.jpg')" }}
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0 animate-ken-burns"
+                style={{ backgroundImage: `url('/Images/2.jpg?v=${ASSETS_VERSION}')` }}
             >
-                <div className="absolute inset-0 bg-black/30 backdrop-blur-[2px]"></div>
+                <div className="absolute inset-0 bg-white/0 backdrop-blur-[1px]"></div>
             </div>
 
             {/* Content */}
             <div className="relative z-10 text-center text-white px-4 animate-fade-in-up">
-                <h3 className="text-xl md:text-2xl font-light tracking-[0.2em] mb-4 uppercase">Save the Date</h3>
+                <h3 className="text-sm md:text-base font-medium tracking-[0.3em] mb-6 uppercase text-white bg-white/10 px-4 py-1.5 rounded-pill w-fit mx-auto">Save the Date</h3>
 
-                <div className="font-script text-6xl md:text-8xl lg:text-9xl mb-6 text-primary transform hover:scale-105 transition-transform duration-700">
+                <div className="font-display text-7xl md:text-9xl mb-8 text-white drop-shadow-sm">
                     <div className="mb-2">Đức</div>
-                    <div className="text-4xl my-2">&</div>
+                    <div className="text-3xl font-sans text-white my-4 flex items-center justify-center gap-4">
+                        <span className="h-px w-8 bg-white/20"></span>
+                        &
+                        <span className="h-px w-8 bg-white/20"></span>
+                    </div>
                     <div>Tuyên</div>
                 </div>
 
-                <div className="flex flex-col items-center gap-4 mt-8 font-light tracking-widest text-lg md:text-xl">
-                    <div className="flex flex-col md:flex-row items-center gap-4 md:gap-12">
+                <div className="mt-16 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-24 bg-white/40 backdrop-blur-sm p-6 md:p-8 rounded-lg border border-white/50 shadow-soft w-full max-w-[calc(100vw-2rem)] mx-auto">
+                    {/* Tiệc Nhà Trai */}
+                    <div className="flex flex-col items-center gap-4 w-full">
                         <div className="text-center">
-                            <p className="text-xs uppercase opacity-80 mb-1">Tiệc Nhà Gái</p>
-                            <p className="font-medium">Thứ Bảy, 07/03/2026</p>
+                            <p className="text-[10px] uppercase tracking-[0.2em] text-standby mb-2 font-medium">Tiệc Nhà Trai</p>
+                            <p className="font-semibold text-xl text-slate-800">08 . 03 . 2026</p>
                         </div>
-                        <div className="hidden md:block w-px h-10 bg-white/30"></div>
+                        <Countdown targetDate="2026-03-08T00:00:00" />
+                    </div>
+
+                    {/* Vertical Divider */}
+                    <div className="hidden md:block w-px h-24 bg-slate-200 shadow-sm"></div>
+
+                    {/* Tiệc Nhà Gái */}
+                    <div className="flex flex-col items-center gap-4 w-full">
                         <div className="text-center">
-                            <p className="text-xs uppercase opacity-80 mb-1">Tiệc Nhà Trai</p>
-                            <p className="font-medium">Chủ Nhật, 08/03/2026</p>
+                            <p className="text-[10px] uppercase tracking-[0.2em] text-standby mb-2 font-medium">Tiệc Nhà Gái</p>
+                            <p className="font-semibold text-xl text-slate-800">07 . 03 . 2026</p>
                         </div>
+                        <Countdown targetDate="2026-03-07T00:00:00" />
                     </div>
                 </div>
             </div>

@@ -68,6 +68,50 @@ function doPost(e) {
     }
 }
 
+function doGet(e) {
+    try {
+        var doc = SpreadsheetApp.getActiveSpreadsheet();
+        var sheet = doc.getSheetByName('RSVP');
+
+        if (!sheet) {
+            return ContentService
+                .createTextOutput(JSON.stringify({ 'result': 'success', 'data': [] }))
+                .setMimeType(ContentService.MimeType.JSON);
+        }
+
+        var rows = sheet.getDataRange().getValues();
+        var headers = rows[0];
+        var data = [];
+
+        for (var i = 1; i < rows.length; i++) {
+            var row = rows[i];
+            var record = {};
+            headers.forEach(function (header, index) {
+                record[header] = row[index];
+            });
+            // Only include records with wishes
+            if (record.Wishes && record.Wishes.trim() !== '') {
+                data.push({
+                    name: record.Name,
+                    message: record.Wishes,
+                    timestamp: record.Timestamp
+                });
+            }
+        }
+
+        // Return latest wishes first
+        data.reverse();
+
+        return ContentService
+            .createTextOutput(JSON.stringify({ 'result': 'success', 'data': data }))
+            .setMimeType(ContentService.MimeType.JSON);
+    } catch (e) {
+        return ContentService
+            .createTextOutput(JSON.stringify({ 'result': 'error', 'error': e }))
+            .setMimeType(ContentService.MimeType.JSON);
+    }
+}
+
 function setup() {
     var doc = SpreadsheetApp.getActiveSpreadsheet();
     var sheet = doc.getSheetByName('RSVP');

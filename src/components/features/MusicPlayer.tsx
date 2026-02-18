@@ -1,6 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Music, Pause } from 'lucide-react';
-import { Button } from '../ui/Button';
 
 export const MusicPlayer: React.FC = () => {
     const [isPlaying, setIsPlaying] = useState(true); // Default to true (optimistic)
@@ -62,15 +60,36 @@ export const MusicPlayer: React.FC = () => {
     };
 
     return (
-        <div className="fixed bottom-6 right-6 z-50">
-            <Button
-                variant="primary"
+        <div className="fixed top-6 right-6 z-[60]">
+            <button
                 onClick={togglePlay}
-                className="rounded-full w-16 h-16 md:w-20 md:h-20 flex items-center justify-center shadow-xl animate-pulse-slow active:scale-95 transition-transform"
+                className="relative group transition-all duration-500 hover:scale-110 active:scale-95 flex items-center justify-center"
                 aria-label="Toggle Music"
             >
-                {isPlaying ? <Pause size={32} /> : <Music size={32} />}
-            </Button>
+                {/* Vinyl Record Design */}
+                <div className={`relative w-14 h-14 md:w-16 md:h-16 flex items-center justify-center rounded-full bg-black shadow-2xl transition-all duration-700 ${isPlaying ? 'animate-spin-slow opacity-100 scale-100' : 'rotate-0 opacity-40 scale-90'}`}>
+                    {/* Inner Grooves */}
+                    <div className="absolute inset-1 border-[3px] border-white/5 rounded-full"></div>
+                    <div className="absolute inset-2 border-[2px] border-white/10 rounded-full"></div>
+                    <div className="absolute inset-4 border-[2px] border-white/5 rounded-full"></div>
+
+                    {/* Center Label */}
+                    <div className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-white flex items-center justify-center relative z-10 text-black">
+                        {/* Spindle hole */}
+                        <div className="w-1.5 h-1.5 rounded-full bg-black/20"></div>
+                    </div>
+
+                    {/* Glossy Reflection */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent rounded-full opacity-50"></div>
+
+                    {/* Diagonal Slash when paused */}
+                    {!isPlaying && (
+                        <div className="absolute inset-0 z-20 flex items-center justify-center">
+                            <div className="w-[120%] h-[4px] bg-white/60 rotate-45 rounded-full shadow-sm"></div>
+                        </div>
+                    )}
+                </div>
+            </button>
         </div>
     );
 };

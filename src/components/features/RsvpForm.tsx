@@ -64,10 +64,10 @@ export const RsvpForm: React.FC = () => {
     }
 
     return (
-        <Section id="rsvp-section">
-            <div className="text-center mb-10">
-                <h2 className="text-3xl md:text-5xl font-display text-primary mb-4">Gửi Lời Chúc</h2>
-                <p className="text-gray-600 max-w-lg mx-auto">Sự hiện diện của quý khách là niềm vinh hạnh cho gia đình chúng tôi.</p>
+        <Section id="rsvp-section" className="bg-neutral">
+            <div className="text-center mb-12">
+                <h3 className="text-3xl md:text-5xl font-display text-slate-800 mb-4">Gửi Lời Chúc</h3>
+                <p className="text-standby max-w-lg mx-auto font-sans leading-relaxed">Sự hiện diện của quý khách là niềm vinh hạnh cho gia đình chúng tôi.</p>
             </div>
 
             <Card>
@@ -96,14 +96,14 @@ export const RsvpForm: React.FC = () => {
                             <button
                                 type="button"
                                 onClick={() => setFormData({ ...formData, attending: 'yes' })}
-                                className={`flex-1 py-3 rounded-xl border transition-all ${formData.attending === 'yes' ? 'bg-primary text-white border-primary' : 'bg-white border-gray-200 hover:border-primary/50'}`}
+                                className={`flex-1 py-3 px-6 rounded-lg font-medium transition-all shadow-soft border ${formData.attending === 'yes' ? 'bg-primary text-white border-primary' : 'bg-white text-standby border-slate-200 hover:border-primary/50'}`}
                             >
                                 Chắc chắn!
                             </button>
                             <button
                                 type="button"
                                 onClick={() => setFormData({ ...formData, attending: 'no' })}
-                                className={`flex-1 py-3 rounded-xl border transition-all ${formData.attending === 'no' ? 'bg-gray-500 text-white border-gray-500' : 'bg-white border-gray-200 hover:border-gray-500/50'}`}
+                                className={`flex-1 py-3 px-6 rounded-lg font-medium transition-all shadow-soft border ${formData.attending === 'no' ? 'bg-standby text-white border-standby' : 'bg-white text-standby border-slate-200 hover:border-standby/50'}`}
                             >
                                 Tiếc quá...
                             </button>
@@ -111,9 +111,9 @@ export const RsvpForm: React.FC = () => {
                     </div>
 
                     <div className="flex flex-col gap-2">
-                        <label className="text-sm font-medium text-text-main/80 ml-1">Lời chúc</label>
+                        <label className="text-sm font-medium text-slate-700 ml-1">Lời chúc</label>
                         <textarea
-                            className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white/50 backdrop-blur-sm h-32 resize-none"
+                            className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-primary focus:ring-[3px] focus:ring-primary/10 outline-none transition-all bg-white font-sans h-32 resize-none text-slate-700"
                             placeholder="Gửi lời chúc tốt đẹp đến cô dâu và chú rể..."
                             value={formData.wishes}
                             onChange={(e) => setFormData({ ...formData, wishes: e.target.value })}

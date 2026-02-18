@@ -1,12 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Pinyon+Script&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+
+  html,
   body {
-    @apply bg-neutral text-text-main font-sans antialiased;
+    @apply overflow-x-hidden w-full;
+  }
+
+  body {
+    @apply bg-neutral text-text-main font-sans antialiased selection:bg-primary/20;
   }
 
   h1,
@@ -15,6 +21,113 @@
   h4,
   h5,
   h6 {
-    @apply font-display text-accent;
+    @apply font-display text-slate-800;
+  }
+}
+
+@layer utilities {
+  .animate-ken-burns {
+    animation: ken-burns 30s ease-in-out infinite alternate;
+  }
+
+  @keyframes ken-burns {
+    0% {
+      transform: scale(1);
+    }
+
+    100% {
+      transform: scale(1.1);
+    }
+  }
+
+  .animate-reveal-up {
+    opacity: 0;
+    transform: translateY(50px) scale(0.98);
+    transition: all 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .animate-reveal-left {
+    opacity: 0;
+    transform: translateX(-50px) scale(0.98);
+    transition: all 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .animate-reveal-right {
+    opacity: 0;
+    transform: translateX(50px) scale(0.98);
+    transition: all 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .animate-reveal-up.is-visible,
+  .animate-reveal-left.is-visible,
+  .animate-reveal-right.is-visible {
+    opacity: 1;
+    transform: translate(0) scale(1);
+  }
+
+  .animate-reveal-quote {
+    opacity: 0;
+    filter: blur(5px);
+    letter-spacing: 0.1em;
+    transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .animate-reveal-quote.is-visible {
+    opacity: 1;
+    filter: blur(0);
+    letter-spacing: 0.2em;
+  }
+
+  @keyframes heart-fall {
+    0% {
+      transform: translateY(-10vh) rotate(0deg);
+      opacity: 0;
+    }
+
+    10% {
+      opacity: 1;
+    }
+
+    90% {
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateY(110vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes heart-sway {
+
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+
+    50% {
+      transform: translateX(30px);
+    }
+  }
+
+  .heart-particle {
+    position: absolute;
+    top: -10vh;
+    pointer-events: none;
+    z-index: 30;
+  }
+
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 8s linear infinite;
   }
 }

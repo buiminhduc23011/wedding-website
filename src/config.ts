@@ -1,2 +1,2 @@
-// Replace this URL with the one you generate from Google Apps Script deployment
-export const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxoEWGahcxbIKBTYLSj9Kn1j7SKl_nsb3FXszxk2suDZAzoZobXD_Jal90oaJpe_aG2/exec"; 
+export const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw7bwi2azGRXVzmHDPq8Odg7SSQI8M4MDro2fCi3mXYdrOPy1yXEcfj_vSzZneGJGjy/exec";
+export const ASSETS_VERSION = "20240216v2"; // Update this whenever you change images
