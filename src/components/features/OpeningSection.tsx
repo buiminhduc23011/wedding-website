@@ -93,8 +93,8 @@ export const OpeningSection: React.FC<OpeningSectionProps> = ({ id }) => {
             ))}
 
             {/* BIG "WEDDING" Solid Text */}
-            <div className={`absolute top-[5%] md:top-[8%] left-8 md:left-24 z-20 pointer-events-none transition-all duration-[2000ms] ${showContent ? 'opacity-90 translate-y-0' : 'opacity-0 translate-y-10'} max-w-[calc(100vw-3rem)]`}>
-                <h1 className="font-cursive text-6xl sm:text-8xl md:text-[10vw] leading-none text-white select-none drop-shadow-lg break-words italic">
+            <div className={`absolute top-[8%] md:top-[12%] left-8 md:left-24 z-20 pointer-events-none transition-all duration-[2000ms] ${showContent ? 'opacity-90 translate-y-0' : 'opacity-0 translate-y-10'} max-w-[calc(100vw-3rem)]`}>
+                <h1 className="font-cursive text-8xl sm:text-10xl md:text-[13vw] leading-none text-white select-none drop-shadow-lg break-words italic">
                     Wedding
                 </h1>
             </div>

@@ -18,12 +18,12 @@ export const HeroSection: React.FC = () => {
             <div className="relative z-10 text-center text-white px-4 animate-fade-in-up">
                 <h3 className="text-sm md:text-base font-medium tracking-[0.3em] mb-6 uppercase text-white bg-white/10 px-4 py-1.5 rounded-pill w-fit mx-auto">Save the Date</h3>
 
-                <div className="font-display text-7xl md:text-9xl mb-8 text-white drop-shadow-sm">
+                <div className="font-display text-7xl md:text-9xl mb-8 text-[#DA8C8C] drop-shadow-sm">
                     <div className="mb-2">Đức</div>
-                    <div className="text-3xl font-sans text-white my-4 flex items-center justify-center gap-4">
-                        <span className="h-px w-8 bg-white/20"></span>
+                    <div className="text-3xl font-sans text-[#DA8C8C] my-4 flex items-center justify-center gap-4">
+                        <span className="h-px w-8 bg-[#DA8C8C]/30"></span>
                         &
-                        <span className="h-px w-8 bg-white/20"></span>
+                        <span className="h-px w-8 bg-[#DA8C8C]/30"></span>
                     </div>
                     <div>Tuyên</div>
                 </div>
