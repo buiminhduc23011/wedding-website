@@ -1,6 +1,7 @@
 import { HeroSection } from './components/features/HeroSection';
 import { MapSection } from './components/features/MapSection';
 import { RsvpForm } from './components/features/RsvpForm';
+import { GiftSection } from './components/features/GiftSection';
 import { MusicPlayer } from './components/features/MusicPlayer';
 import { GallerySection } from './components/features/GallerySection';
 import { TimelineSection } from './components/features/TimelineSection';
@@ -23,13 +24,13 @@ function App() {
         <GallerySection />
 
         <MapSection />
-
         <RsvpForm />
-
       </main>
 
-      <footer className="py-12 text-center bg-white border-t border-slate-100">
-        <p className="font-display text-4xl text-primary italic">Thank you</p>
+      <footer className="py-6 px-4 bg-white border-t border-slate-100">
+        <div className="max-w-4xl mx-auto flex flex-col items-center">
+          <GiftSection />
+        </div>
       </footer>
     </div>
   )
