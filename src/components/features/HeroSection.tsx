@@ -34,8 +34,9 @@ export const HeroSection: React.FC = () => {
                         <div className="text-center">
                             <p className="text-[10px] uppercase tracking-[0.2em] text-standby mb-2 font-medium">Tiệc Nhà Trai</p>
                             <p className="font-semibold text-xl text-slate-800">08 . 03 . 2026</p>
+                            <p className="text-sm text-standby mt-1"> 11:00 SA</p>
                         </div>
-                        <Countdown targetDate="2026-03-08T00:00:00" />
+                        <Countdown targetDate="2026-03-08T11:00:00" />
                     </div>
 
                     {/* Vertical Divider */}
@@ -46,8 +47,9 @@ export const HeroSection: React.FC = () => {
                         <div className="text-center">
                             <p className="text-[10px] uppercase tracking-[0.2em] text-standby mb-2 font-medium">Tiệc Nhà Gái</p>
                             <p className="font-semibold text-xl text-slate-800">07 . 03 . 2026</p>
+                            <p className="text-sm text-standby mt-1"> 10:00 SA</p>
                         </div>
-                        <Countdown targetDate="2026-03-07T00:00:00" />
+                        <Countdown targetDate="2026-03-07T10:00:00" />
                     </div>
                 </div>
             </div>

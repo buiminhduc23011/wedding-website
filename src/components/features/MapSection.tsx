@@ -11,6 +11,7 @@ export const MapSection: React.FC = () => {
             title: "NHÀ TRAI",
             name: "Tư Gia",
             date: "Chủ Nhật, 08/03/2026",
+            time: "11:00 SA",
             address: "101 Huỳnh Khương Ninh - Tổ 13 - KP. Lam Sơn - P. Tân Phước - TP. HCM",
             mapQuery: "101 Huỳnh Khương Ninh, Phường Tân Phước, Hồ Chí Minh",
             googleMapsUrl: "https://maps.app.goo.gl/CuH1ASRRJ1RnnW3K6?g_st=iz"
@@ -19,6 +20,7 @@ export const MapSection: React.FC = () => {
             title: "NHÀ GÁI",
             name: "Tư Gia",
             date: "Thứ Bảy, 07/03/2026",
+            time: "10:00 SA",
             address: "Ấp Trại Ngang, X. Gò Công Đông, T. Đồng Tháp",
             mapQuery: "Ấp Trại Ngang, Xã Gò Công Đông, Đồng Tháp",
             googleMapsUrl: "https://maps.app.goo.gl/ZQJLVQTosgWAKTs4A?g_st=az"
@@ -31,7 +33,7 @@ export const MapSection: React.FC = () => {
         <Section id="map-section" className="bg-neutral">
             <div className="text-center mb-12">
                 <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-primary mb-3">Bản đồ</h2>
-               
+
 
                 <div className="flex justify-center gap-3 mt-8">
                     <button
@@ -63,9 +65,12 @@ export const MapSection: React.FC = () => {
                             </div>
                         </div>
 
-                        <div className="space-y-4 mb-8">
+                        <div className="space-y-3 mb-8">
                             <div className="flex items-center gap-3 text-standby text-sm font-medium">
                                 <span className="bg-slate-100 px-3 py-1 rounded-md text-slate-700">{current.date}</span>
+                            </div>
+                            <div className="flex items-center gap-3 text-standby text-sm font-medium">
+                                <span className="bg-slate-100 px-3 py-1 rounded-md text-slate-700"> {current.time}</span>
                             </div>
                         </div>
 
